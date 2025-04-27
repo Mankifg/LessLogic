@@ -1,4 +1,4 @@
-import game_utils
+import lessgame.gameutils as gameutils
 
 
 def convert_to_url(b10_board, lbp, base_url):
@@ -399,7 +399,7 @@ def cost_of_moves(current_pos, b10_board, color):
     moves = legal_moves_for_color(current_pos, b10_board, color)
     print("-- legal")
     for m in moves:
-        print(game_utils.from_arry_notation(m))
+        print(gameutils.from_arry_notation(m))
     print("-- end")
 
     wall_moves = get_wall_moves(b10_board)
@@ -421,5 +421,5 @@ def push_move(lbp, ary_move):
     b[y2][x2] = save
 
     new_lbp = reverse(b)
-    print(f"{game_utils.from_arry_notation(ary_move)}: {lbp} -> {new_lbp}")
+    print(f"{gameutils.from_arry_notation(ary_move)}: {lbp} -> {new_lbp}")
     return new_lbp
